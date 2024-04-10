@@ -4,18 +4,24 @@ import java.util.InputMismatchException;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Main main = new Main();
+        Multiplier multy = new Multiplier();
+        Adder ad = new Adder();
+        Divider di = new Divider();
+        Subtractor su = new Subtractor();
 
         try {
-            int a = inputfromUser();
-            int b = inputfromUser();
-            int m = Multiplier.calculate(a, b);
-            int s = Subtractor.calculate(a, b);
-            int d = Divider.calculate(a, b);
-            int a1 = Adder.calculate(a, b);
+            int a = inputFromUser();
+            int b = inputFromUser();
+            int m = multy.calculate(a, b);
+            int s = su.calculate(a, b);
+            int d = di.calculate(a, b);
+            int a1 = ad.calculate(a, b);
             System.out.println(m);
             System.out.println(s);
             System.out.println(d);
             System.out.println(a1);
+
         }
         catch(InputMismatchException e){
             System.out.println("Неправильно введена информация ");
@@ -26,7 +32,7 @@ public class Main {
 
     }
 
-    public static int inputfromUser() {
+    public static int inputFromUser() {
         System.out.println("Введите  целочисленное числ: ");
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
